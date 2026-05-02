@@ -1,4 +1,4 @@
-# architect-agent
+# fullstack-agent
 
 This repository contains custom GitHub Copilot agents for Java backend delivery.
 
@@ -8,6 +8,7 @@ This repository contains custom GitHub Copilot agents for Java backend delivery.
 - `.claude/agents/qa.agent.md` — QA automation and test planning agent.
 - `.claude/agents/code-reviewer.agent.md` — code review and security/performance agent.
 - `.claude/agents/documentation.agent.md` — documentation and architecture writing agent.
+- `.claude/agents/terraform.agent.md` — AWS Terraform deployment agent for infrastructure provisioning.
 - `.claude/agents/orchestrator.agent.md` — feature orchestration and specialist handoff agent.
 - `.claude/agents/AGENTS.md` — consolidated agent documentation and usage guide.
 - `.claude/skills/` — custom skill definitions for reusable capabilities.
@@ -17,6 +18,7 @@ This repository contains custom GitHub Copilot agents for Java backend delivery.
 
 - Open `.claude/agents/AGENTS.md` for a summary of each agent and supported commands.
 - Edit the individual `.agent.md` files to adjust metadata, tools, or prompt behavior.
+- Use `.claude/agents/terraform.agent.md` to manage AWS/Terraform deployment guidance and infrastructure workflows.
 
 ## Orchestrator Workflow
 
@@ -35,6 +37,7 @@ flowchart TD
   Q --> TE[Create test plan and edge cases]
   CR --> RV[Review quality, security, and performance]
   DOC --> DC[Document APIs and design decisions]
+  RE --> T[Deploy infrastructure with Terraform]
 ```
 
 ## Notes
