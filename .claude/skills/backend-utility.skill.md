@@ -11,3 +11,4 @@ Use this skill when the agent needs a reusable helper for backend patterns, arch
 
 - "Help me choose between a service and repository layer for this code."
 - "Suggest a test strategy for validating Spring Boot endpoint validation."
+ 
