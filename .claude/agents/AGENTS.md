@@ -74,24 +74,6 @@ This project contains five custom Claude agents under `.claude/agents`. Each age
   - `code-reviewer` - implementation review and quality checks
   - `documentation` - documentation and API/architecture write-up
 
-### Orchestrator Workflow
-```mermaid
-flowchart TD
-  U[User requests new feature] --> CS[Inspect existing patterns with code search]
-  CS --> SP[Draft technical specification]
-  SP --> D{Feature approved?}
-  D -->|Yes| RE[Recommend specialist agent]
-  D -->|No| RI[Refine design and repeat]
-  RE --> A[Architect]
-  RE --> Q[QA]
-  RE --> CR[Code Reviewer]
-  RE --> DOC[Documentation]
-  A --> FE[Implement architecture and backend]
-  Q --> TE[Create test plan and edge cases]
-  CR --> RV[Review quality, security, and performance]
-  DOC --> DC[Document APIs and design decisions]
-```
-
 ## How to Use This Documentation
 
 - Open `.claude/agents/AGENTS.md` to review the available agent capabilities.

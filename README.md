@@ -18,6 +18,25 @@ This repository contains custom GitHub Copilot agents for Java backend delivery.
 - Open `.claude/agents/AGENTS.md` for a summary of each agent and supported commands.
 - Edit the individual `.agent.md` files to adjust metadata, tools, or prompt behavior.
 
+## Orchestrator Workflow
+
+```mermaid
+flowchart TD
+  U[User requests new feature] --> CS[Inspect existing patterns with code search]
+  CS --> SP[Draft technical specification]
+  SP --> D{Feature approved?}
+  D -->|Yes| RE[Recommend specialist agent]
+  D -->|No| RI[Refine design and repeat]
+  RE --> A[Architect]
+  RE --> Q[QA]
+  RE --> CR[Code Reviewer]
+  RE --> DOC[Documentation]
+  A --> FE[Implement architecture and backend]
+  Q --> TE[Create test plan and edge cases]
+  CR --> RV[Review quality, security, and performance]
+  DOC --> DC[Document APIs and design decisions]
+```
+
 ## Notes
 
 - Agent definitions should remain under `.claude/agents/` for compatibility with the Copilot custom agent workflow.
