@@ -1,6 +1,6 @@
 # Custom Agent Documentation
 
-This project contains five custom Claude agents under `.claude/agents`. Each agent is specialized for a different phase of Java backend delivery: architecture design, quality assurance, code review, documentation, and orchestration.
+This project contains six custom Claude agents under `.claude/agents`. Each agent is specialized for a different phase of Java backend delivery, cloud deployment, or engineering support.
 
 ## Agents Overview
 
@@ -73,6 +73,20 @@ This project contains five custom Claude agents under `.claude/agents`. Each age
   - `qa` - test plan and edge case verification
   - `code-reviewer` - implementation review and quality checks
   - `documentation` - documentation and API/architecture write-up
+
+### `terraform`
+- **Purpose:** Generate and review AWS Terraform infrastructure code for deploying the Spring Boot backend.
+- **Primary Focus:** ECS Fargate, ECR, RDS, IAM, CloudWatch, and secure Terraform patterns.
+- **Tools Available:** `Read`, `Grep`, `Glob`, `Bash`
+- **Key Behaviors:**
+  - Creates modular Terraform configurations with locked provider versions
+  - Avoids hardcoded secrets and uses variables for credentials and environment settings
+  - Designs policies with least privilege and adds logging/monitoring resources
+- **Commands:**
+  - `/infra` - generate a full AWS Terraform deployment structure for the Spring Boot app
+  - `/module` - create a reusable Terraform module for a specific infrastructure layer
+  - `/review` - audit existing Terraform code and recommend hardening improvements
+  - `/task` - generate Terraform resources for a targeted AWS service
 
 ## How to Use This Documentation
 

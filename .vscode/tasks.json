@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Create Spring Boot Instructions File",
+			"type": "shell",
+			"command": "cat > .claude/instructions/spring-boot-java.instructions.md <<'EOF'\n---\nname: spring-boot-java\nsummary: Enforce Spring Boot 3 Java backend coding standards and architecture rules.\n---\n\nYou are an expert Java developer specializing in Spring Boot 3.x. When generating code, strictly follow these rules:\n\n- Architecture: Use a modular package structure: `controller`, `service`, `repository`, `model` (entities), and `dto`.\n- Dependency Injection: Always use constructor injection; never use `@Autowired` on fields.\n- API Standards: Return `ResponseEntity` with appropriate HTTP status codes. Use Records for DTOs to ensure immutability.\n- Error Handling: Implement a `@RestControllerAdvice` for global exception handling and use custom domain exceptions.\n- Testing: For every class created, generate a corresponding test using JUnit 5 and Mockito. Use `@WebMvcTest` for controllers and `@DataJpaTest` for repositories.\n- Naming: Follow standard Java camelCase and Spring conventions (e.g., `UserRepository`, `UserServiceImpl`).\nEOF",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
