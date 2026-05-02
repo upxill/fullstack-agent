@@ -1,6 +1,6 @@
 # Custom Agent Documentation
 
-This project contains three custom Claude agents under `.claude/agents`. Each agent is specialized for a different phase of Java backend delivery: architecture design, quality assurance, and code review.
+This project contains five custom Claude agents under `.claude/agents`. Each agent is specialized for a different phase of Java backend delivery: architecture design, quality assurance, code review, documentation, and orchestration.
 
 ## Agents Overview
 
@@ -44,6 +44,35 @@ This project contains three custom Claude agents under `.claude/agents`. Each ag
   - `/security` - focus on OWASP-style vulnerabilities
   - `/perf` - analyze time/space complexity
   - `/tests` - verify test coverage adequacy
+
+### `documentation`
+- **Purpose:** Turn raw Java codebases into clear, maintainable documentation and architecture guidance.
+- **Primary Focus:** Javadoc, README content, ADRs, API specs, and developer onboarding.
+- **Tools Available:** `Read`, `Grep`, `Glob`, `Bash`
+- **Key Behaviors:**
+  - Generates professional Markdown with tables, code blocks, and diagrams
+  - Produces accurate API and architecture documentation
+  - Creates onboarding guides and ADRs for decision tracking
+- **Commands:**
+  - `/javadoc` - add or update Javadocs for the current class or method
+  - `/readme` - generate a comprehensive project README
+  - `/endpoint` - document a specific REST controller endpoint
+  - `/diagram` - produce a Mermaid.js sequence diagram
+  - `/adr [topic]` - create an Architecture Decision Record
+
+### `orchestrator`
+- **Purpose:** Coordinate feature delivery by delegating work to specialist agents and generating cross-stack plans.
+- **Primary Focus:** Feature planning, agent handoffs, and high-level implementation guidance.
+- **Tools Available:** `Read`, `Grep`, `Glob`, `Bash`
+- **Key Behaviors:**
+  - Uses code search to understand existing patterns
+  - Drafts technical specifications for frontend and backend work
+  - Suggests the appropriate specialist agent for the next step
+- **Handoffs:**
+  - `architect` - architecture planning and backend design
+  - `qa` - test plan and edge case verification
+  - `code-reviewer` - implementation review and quality checks
+  - `documentation` - documentation and API/architecture write-up
 
 ## How to Use This Documentation
 
