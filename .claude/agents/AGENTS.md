@@ -2,10 +2,6 @@
 
 This project contains five custom Claude agents under `.claude/agents`. Each agent is specialized for a different phase of Java backend delivery: architecture design, quality assurance, code review, documentation, and orchestration.
 
-The repository also includes standard Copilot custom-agent support folders:
-- `.claude/skills/` for reusable skill definitions
-- `.claude/instructions/` for shared instruction templates and prompt behavior guidance
-
 ## Agents Overview
 
 ### `architect`
